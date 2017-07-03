@@ -1,0 +1,19 @@
+{
+  "name": "rxjs-playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --watch --inline"
+  },
+  "author": "Jasmine Hirpara",
+  "license": "ISC",
+  "dependencies" : {
+      "jquery": "^3.2.1",
+      "rxjs": "^5.4.0"
+  },
+  "devDependencies" : {
+      "webpack": "^2.6.1",
+      "webpack-dev-server": "^2.4.5"
+  }
+}

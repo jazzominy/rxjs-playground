@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RxJS Intro</title>
+        <style>
+            ul {
+                list-style: none;
+                padding-left: 5px;
+            }
+
+            li {
+                padding-top: 5px;
+            }
+
+            li img {
+                width: 40px;
+                vertical-align: middle;
+                border-radius: 20px;
+            }
+
+            #followBox {
+                border: 1px solid #CCCCCC;
+                border-radius: 4px;
+                display: inline-block;
+                padding: 5px;
+            }
+
+            #typeBox {
+                border: 1px solid #CCCCCC;
+                border-radius: 4px;
+                display: inline-block;
+                padding: 5px;
+                vertical-align: top;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="followBox">
+            <span>Who to follow</span>
+            <button id="refreshBtn">Refresh</button>
+            <div id="userCon">
+                <ul id="userList">
+                    <li id="sug1" style="visibility:hidden">
+                        <img>
+                        <a href="" target="_blank" class="username">login</a>
+                        <a href="#" class="close close1">&times;</a>
+                    </li>
+                    <li id="sug2" style="visibility:hidden">
+                        <img>
+                        <a href="" target="_blank" class="username">login</a>
+                        <a href="#" class="close close2">&times;</a>
+                    </li>
+                    <li id="sug3" style="visibility:hidden">
+                        <img>
+                        <a href="" target="_blank" class="username">login</a>
+                        <a href="#" class="close close3">&times;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="typeBox">
+            <input id="inputBox" type="text" placeholder="Type anything"/>
+            <button id="countBtn">Counter</button>
+        </div>
+        <script src="dist/bundle.js"></script>
+    </body>
+</html>
