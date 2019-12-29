@@ -1,6 +1,6 @@
-import { BehaviorSubject } from "rxjs";
+import { ReplaySubject } from "rxjs";
 
-let subject = new BehaviorSubject(0);
+let subject = new ReplaySubject(2);
 
 let obsA = {
     next: (x) => console.log('A next ', x),
