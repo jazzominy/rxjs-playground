@@ -1,7 +1,9 @@
-import { ReplaySubject } from "rxjs";
+import { AsyncSubject } from "rxjs";
 
-// ReplaySubject emits pending values even if it hase completed
-let subject = new ReplaySubject(Number.POSITIVE_INFINITY, 250);
+// ReplaySubject replays many, before or after completion
+// BehaviorSubject replays one, only before completion
+// AsyncSubject replays one, only if completed
+let subject = new AsyncSubject();
 
 let obsA = {
     next: (x) => console.log('A next ', x),
