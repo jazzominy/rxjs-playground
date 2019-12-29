@@ -1,6 +1,7 @@
 import { ReplaySubject } from "rxjs";
 
-let subject = new ReplaySubject(2);
+// ReplaySubject emits pending values even if it hase completed
+let subject = new ReplaySubject(Number.POSITIVE_INFINITY, 250);
 
 let obsA = {
     next: (x) => console.log('A next ', x),
@@ -16,10 +17,11 @@ let obsB = {
     complete: () => console.log('B complete '),
 }
 
-subject.next(1);
-subject.next(2);
-subject.next(3);
+setTimeout(() => subject.next(1), 100)
+setTimeout(() => subject.next(2), 200)
+setTimeout(() => subject.next(3), 300)
+setTimeout(() => subject.complete(), 350)
 
 setTimeout(() => {
     subject.subscribe(obsB);
-}, 2000)
+}, 400)
