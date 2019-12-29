@@ -1,14 +1,8 @@
-import { Observable } from "rxjs";
+import { Observable, Subject } from "rxjs";
 
 let observable = Observable.interval(1000).take(5);
 
-let bridgeObs = {
-    next: function(x) {this.observers.forEach(o => o.next(x))},
-    error: function(x) {this.observers.forEach(o => o.error(err))},
-    complete: function(x) {this.observers.forEach(o => o.complete())},
-    observers: [],
-    addObserver: function(o) {this.observers.push(o)}
-}
+let subject = new Subject();
 
 let obsA = {
     next: (x) => console.log('A next ', x),
@@ -16,8 +10,8 @@ let obsA = {
     complete: () => console.log('A complete '),
 }
 
-observable.subscribe(bridgeObs);
-bridgeObs.addObserver(obsA);
+observable.subscribe(subject);
+subject.subscribe(obsA);
 
 let obsB = {
     next: (x) => console.log('B next ', x),
@@ -26,5 +20,5 @@ let obsB = {
 }
 
 setTimeout(() => {
-    bridgeObs.addObserver(obsB);
+    subject.subscribe(obsB);
 }, 2000)
