@@ -1,8 +1,6 @@
-import { Observable, Subject } from "rxjs";
+import { BehaviorSubject } from "rxjs";
 
-let observable = Observable.interval(1000).take(5);
-
-let subject = new Subject();
+let subject = new BehaviorSubject(0);
 
 let obsA = {
     next: (x) => console.log('A next ', x),
@@ -10,7 +8,6 @@ let obsA = {
     complete: () => console.log('A complete '),
 }
 
-observable.subscribe(subject);
 subject.subscribe(obsA);
 
 let obsB = {
@@ -18,6 +15,10 @@ let obsB = {
     error: (err) => console.log('B error ', err),
     complete: () => console.log('B complete '),
 }
+
+subject.next(1);
+subject.next(2);
+subject.next(3);
 
 setTimeout(() => {
     subject.subscribe(obsB);
