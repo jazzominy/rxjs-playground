@@ -3,4 +3,5 @@
 // import './connectable-observable-refCount';
 // import './publish';
 // import './takeUntil';
-import './flattening';
+// import './flattening';
+import './switchMap';
