@@ -1,3 +1,3 @@
 // import './suggestion-card'
 // import './subject';
-import './connectable-observable';
+import './connectable-observable-refCount';
