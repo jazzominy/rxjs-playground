@@ -4,4 +4,5 @@
 // import './publish';
 // import './takeUntil';
 // import './flattening';
-import './switchMap';
+// import './switchMap';
+import './withLatestFrom';
