@@ -8,4 +8,5 @@
 // import './withLatestFrom';
 // import './error';
 // import './retry';
-import './window';
+// import './window';
+import './window-toggle';
